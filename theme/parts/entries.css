@@ -106,6 +106,7 @@
 #urlbar-container, #search-container {
 	padding: 0 !important;
 	margin: 0 3px !important;
+	margin-right: calc(100% - 590px) !important;
 }
 #urlbar-input-container {
 	background: transparent !important;
