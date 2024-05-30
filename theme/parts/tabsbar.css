@@ -7,11 +7,16 @@
 }
 
 #TabsToolbar {
+    position: absolute;
+    width: calc(100vw - 765px);
+    top: 6px;
+    right: 0;
+    margin-right: 329px;
     --toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding) !important;
 	background-color: var(--gnome-tabbar-background) !important;
 	border-bottom: 0 !important;
 	padding: 0 !important;
-	position: relative;
+	/* position: relative; */
 	z-index: 1;
 }
 
@@ -218,6 +223,7 @@ tab {
 	justify-content: center !important;
 	align-items: center !important;
 	margin-top: -1px;
+	flex-direction: row-reverse;
 }
 .tab-content:not([pinned]) {
 	padding: 0 4px !important;
@@ -248,7 +254,7 @@ tab {
 	margin-right: 0;
 }
 .tabbrowser-tab:not([pinned]) .tab-icon-stack {
-	margin-left: auto !important;
+	margin-left: 5px !important;
 }
 .tab-close-button {
 	margin-left: auto;
@@ -336,6 +342,7 @@ tab {
 	-moz-context-properties: fill, fill-opacity !important;
 	height: 16px !important;
 	margin-right: 0 !important;
+	margin-left: auto!important;
 	opacity: 1 !important;
 	width: 16px !important;
 	z-index: 100 !important;
@@ -530,6 +537,15 @@ tab {
   margin-inline-start: 0 !important;
 }
 
+#tabbrowser-arrowscrollbox[orient="horizontal"] {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#tabbrowser-arrowscrollbox[orient="horizontal"] {
+    direction: rtl;
+}
+
 /* Left close buttons */
 @media (-moz-gtk-csd-reversed-placement) and (not (-moz-bool-pref: "gnomeTheme.swapTabClose")),
 	   (-moz-bool-pref: "gnomeTheme.swapTabClose") and (not (-moz-gtk-csd-reversed-placement)) {
@@ -600,6 +616,10 @@ tab {
 	.tabbrowser-tab:not([pinned]):not([selected="true"]):hover .tab-label-container[textoverflow="true"] {
 		margin-right: -16px;
 	}
+}
+
+#tabbrowser-arrowscrollbox-periphery {
+    display: none;
 }
 
 /* OPTIONAL: Use tabs as headerbar */
