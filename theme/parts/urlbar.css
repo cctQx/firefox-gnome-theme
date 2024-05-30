@@ -8,7 +8,8 @@
 }
 
 #urlbar-container {
-	--urlbar-container-height: 34px !important;
+    max-width: 301px;
+	/*--urlbar-container-height: 0 !important;*/
 }
 
 /* Center the URL bar */
@@ -203,4 +204,12 @@ toolbarspring {
 #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover:active,
 #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button[open=true] {
   background-color: hsla(0,0%,70%,.3) !important;
+}
+
+#nav-bar[urlbar-exceeds-toolbar-bounds="true"] #urlbar-container {
+    max-width: unset;
+    margin-right: 0!important;
+    background: var(--tabpanel-background-color);
+    opacity: 1;
+    z-index: 1;
 }
